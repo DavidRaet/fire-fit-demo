@@ -1,0 +1,246 @@
+/* App.css - Main application styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fire Fit Brand Colors */
+  --primary-fire: #FF4500;
+  --primary-fire-light: #FF6347;
+  --primary-fire-dark: #DC143C;
+  
+  --secondary-purple: #8B5CF6;
+  --secondary-pink: #EC4899;
+  --secondary-blue: #3B82F6;
+  
+  /* Neutrals */
+  --bg-dark: #0F172A;
+  --bg-medium: #1E293B;
+  --bg-light: #334155;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  
+  /* Gradients */
+  --gradient-fire: linear-gradient(135deg, #FF4500 0%, #DC143C 100%);
+  --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(255, 69, 0, 0.3);
+  
+  /* Animations */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading State */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1.5rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--bg-light);
+  border-top-color: var(--primary-fire);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Demo Banner */
+.demo-banner {
+  background: var(--gradient-fire);
+  padding: 0.75rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.banner-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.banner-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.session-id {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Navigation */
+.main-nav {
+  background: var(--bg-medium);
+  border-bottom: 2px solid var(--bg-light);
+  padding: 1rem 0;
+  position: sticky;
+  top: 52px;
+  z-index: 90;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: var(--gradient-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  background: transparent;
+  border: 2px solid var(--bg-light);
+  color: var(--text-secondary);
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.nav-link:hover {
+  border-color: var(--primary-fire);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: var(--gradient-fire);
+  border-color: var(--primary-fire);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+    var(--bg-dark);
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Footer */
+.app-footer {
+  background: var(--bg-medium);
+  border-top: 2px solid var(--bg-light);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.app-footer p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    width: 100%;
+  }
+  
+  .nav-link {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .main-nav {
+    top: 72px;
+  }
+  
+  .content-container {
+    padding: 0 1rem;
+  }
+}
