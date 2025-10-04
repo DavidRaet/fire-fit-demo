@@ -86,6 +86,7 @@ v |
 | top_url | text | Link to uploaded top image. |
 | bottom_url | text | Link to uploaded bottom image. |
 | shoes_url | text | Link to uploaded shoes image. |
+| accessories_url | text | Link to uploaded accessories image. | 
 | ai_description | text | Output from Google AI Studio. |
 | ai_image_url | text | Optional generated image. |
 | season | text | From mock presets. |
@@ -153,3 +154,12 @@ FavoritesPage retrieves and displays all saved outfits
 | Sports          | Activewear          |
 
 
+🪜 8. NEXT STEPS
+
+Set up Google AI Studio API — test with single image.
+
+Implement React flow: Upload → Analyze → Display → Save.
+
+Integrate mock seasonal presets for demo consistency.
+
+Implement UI/UX wireframes using the sketches  

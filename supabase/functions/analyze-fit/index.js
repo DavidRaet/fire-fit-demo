@@ -11,3 +11,5 @@ export async function analyzeFit(imageUrl) {
   return result.response.text();
 }
 
+
+
