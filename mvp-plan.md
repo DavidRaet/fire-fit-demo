@@ -125,6 +125,16 @@ React calls /saveOutfit → Supabase persists data
 FavoritesPage retrieves and displays all saved outfits
 
 
+**Example AI Response:**
+```json
+{
+  "top": "White cropped t-shirt",
+  "bottom": "Light wash denim jeans",
+  "shoes": "White sneakers",
+  "aesthetic": ["Y2K", "casual"]
+}
+
+
 🧠 5. MOCK WEATHER & FORMALITY PRESETS
 | Season | Description         | Example Context                    |
 | ------ | ------------------- | ---------------------------------- |
